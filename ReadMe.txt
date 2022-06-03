@@ -23,7 +23,7 @@ Main{
 - This uses the saveFile.txt file to serialize the songList so that it can be saved for use later
 
 SongList {
-    Description: This class's purpose is to provide the DAO with a way to build a songList
+    Description: This class's purpose is to provide the SongDAO with a way to build a songList
 
     String[] songList;
     int[] pingList;
