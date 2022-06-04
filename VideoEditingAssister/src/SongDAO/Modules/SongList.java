@@ -2,19 +2,13 @@ package SongDAO.Modules;
 
 import java.util.HashMap;
 
-public class SongList { // Song duration finder
-    private HashMap<Integer, String> song;
-    private HashMap<Integer, Integer> pingTimes;
-    private HashMap<Integer, String> songDuration;
+public class SongList {
+    private HashMap<Integer, Song> songList;
+    private HashMap<Integer, Integer> pingList;
 
-    // -------------------------------- Custom Methods Below
-    // This method either creates a new Hashmap or it deserializes it from the saveFile.txt
-    public HashMap<Integer, String> grabSongList() {
-        return null;
+    public SongList() {
+        this.songList = SongListHelper.generateSongList();
+        this.pingList = SongListHelper.generatePingList();
     }
 
-    // This method either creates a new Hashmap or it deserializes it from the saveFile.txt
-    public HashMap<Integer, Integer> grabPingList() {
-        return null;
-    }
 }
