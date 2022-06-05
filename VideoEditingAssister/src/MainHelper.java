@@ -6,15 +6,16 @@ public class MainHelper {
     // ------------------------------------------------------------------------------------------
 
     // Message for the main hub to choose a Helper
-    public static void message_PickDAO() {
+    public static void message_PickDAO(String statusMsg) {
         System.out.println(
                 "\n-------------------------------------------------------------" +
                         "\n- Welcome to the Main Hub!                                  -" +
                         "\n-------------------------------------------------------------" +
                         "\nPlease pick the Helper you need to in your video assistance.\n\n" +
-                        "1 : Song Choice(s) Helper\n" +
-                        "2 : Video Extend/Compress Helper\n" +
-                        "0 : Exit\n\n" +
+                        "1 : [Exit]\n" +
+                        "2 : [Video Compression] Helper\n" +
+                        "3 : [Song Choice(s)] Helper\n\n" +
+                        "[Request Status] -> " + statusMsg + "\n\n" +
                         "Enter your number below:");
     }
 
@@ -39,21 +40,16 @@ public class MainHelper {
                 results = grabInput();
                 break;
             } catch (Exception e) {
-                System.out.println(
-                        "Entry detected as not a number, please try again.");
+                System.out.println("Entry detected as not a number, please try again.");
             }
         }
 
         return results;
     }
-
-    // ##########################################################################################
-    //  Private Methods
-    // ------------------------------------------------------------------------------------------
-
-    // Grab user input from console, throws exception error so make sure the upper method is try/catch
     private static int grabInput() {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
     }
+
+
 }

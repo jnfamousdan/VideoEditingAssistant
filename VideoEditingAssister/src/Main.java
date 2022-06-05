@@ -2,11 +2,13 @@ import SongDAO.SongListDAO;
 import VideoLengthDAO.VideoLengthDAO;
 
 public class Main {
+    private String statusMsg;
+
     private SongListDAO songListDAO;
     private VideoLengthDAO videoLengthDAO;
 
     public Main() {
-        System.out.println("Hello world");
+        statusMsg = "Welcome";
 
         songListDAO = new SongListDAO();
         videoLengthDAO = new VideoLengthDAO();
@@ -20,22 +22,24 @@ public class Main {
         boolean isRunning = true;
         while (isRunning) {
             // Ask the user which DAO they would like to access
-            MainHelper.message_PickDAO();
+            MainHelper.message_PickDAO(videoAssistHelper.statusMsg);
             int userInput = MainHelper.getUserInput();
 
             switch (userInput) {
                 case 1:
-                    // SongListDAO
-                    videoAssistHelper.songListDAO.run();
+                    // Exit
+                    MainHelper.message_ExitProgram();
+                    isRunning = false;
                     break;
                 case 2:
                     // videoLengthDAO
                     videoAssistHelper.videoLengthDAO.run();
+                    videoAssistHelper.statusMsg = "Welcome back";
                     break;
-                case 0:
-                    // Exit
-                    MainHelper.message_ExitProgram();
-                    isRunning = false;
+                case 3:
+                    // SongListDAO
+                    videoAssistHelper.songListDAO.run();
+                    videoAssistHelper.statusMsg = "[ERROR] Not implemented yet";
                     break;
             }
         }
