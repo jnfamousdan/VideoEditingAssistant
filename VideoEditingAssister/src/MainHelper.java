@@ -53,6 +53,7 @@ public class MainHelper {
 
     // Grab user input from console, throws exception error so make sure the upper method is try/catch
     private static int grabInput() {
+        System.out.println("1 + 1 = 2");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
     }
