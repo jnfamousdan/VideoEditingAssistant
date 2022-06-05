@@ -13,7 +13,7 @@ public class MainHelper {
                         "\n-------------------------------------------------------------" +
                         "\nPlease pick the Helper you need to in your video assistance.\n\n" +
                         "1 : Song Choice(s) Helper\n" +
-                        "2 : Video Extend/Shorten Helper\n" +
+                        "2 : Video Extend/Compress Helper\n" +
                         "0 : Exit\n\n" +
                         "Enter your number below:");
     }

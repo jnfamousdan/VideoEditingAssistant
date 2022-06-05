@@ -1,11 +1,13 @@
 import SongDAO.SongListDAO;
+import VideoLengthDAO.VideoLengthDAO;
 
 public class Main {
     private SongListDAO songListDAO;
+    private VideoLengthDAO videoLengthDAO;
 
     public Main() {
-
         songListDAO = new SongListDAO();
+        videoLengthDAO = new VideoLengthDAO();
     }
 
     public static void main(String[] args){
@@ -24,6 +26,8 @@ public class Main {
                     // SongListDAO
                     videoAssistHelper.songListDAO.run();
                     break;
+                case 2:
+
                 case 0:
                     // Exit
                     MainHelper.message_ExitProgram();
