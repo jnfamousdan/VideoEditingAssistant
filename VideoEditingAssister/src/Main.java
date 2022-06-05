@@ -4,8 +4,9 @@ public class Main {
     private SongListDAO songListDAO;
 
     public Main() {
-
+        System.out.println("Hello world");
         songListDAO = new SongListDAO();
+
     }
 
     public static void main(String[] args){
