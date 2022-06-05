@@ -6,6 +6,7 @@ public class Main {
     private VideoLengthDAO videoLengthDAO;
 
     public Main() {
+        System.out.println("Hello world");
         songListDAO = new SongListDAO();
         videoLengthDAO = new VideoLengthDAO();
     }
