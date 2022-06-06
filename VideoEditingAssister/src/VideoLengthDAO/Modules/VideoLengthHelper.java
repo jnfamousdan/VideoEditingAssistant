@@ -10,7 +10,8 @@ public class VideoLengthHelper {
     public static void message_welcome() {
         System.out.println("-------------------------------------------------------------" +
                 "\nWelcome to the Video Compression Helper" +
-                "\n\nPlease enter the desired compression multiplier.");
+                "\n\nPlease enter the desired compression multiplier" +
+                "(If you are unsure of what this entails, please see my ReadMe for further instructions).");
     }
 
     public static void message_menuDAO(double multi, String statusMsg) {
