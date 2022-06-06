@@ -10,7 +10,7 @@ public class VideoLengthHelper {
     public static void message_welcome() {
         System.out.println("-------------------------------------------------------------" +
                 "\nWelcome to the Video Compression Helper" +
-                "\n\nPlease enter the desired multiplier.");
+                "\n\nPlease enter the desired compression multiplier.");
     }
 
     public static void message_menuDAO(double multi, String statusMsg) {
@@ -24,7 +24,7 @@ public class VideoLengthHelper {
                         "\n\nEnter your input below:");
     }
 
-    public static void message_updateMulti(){
+    public static void message_updateMulti() {
         System.out.println("Please enter new compress ratio for video processing");
     }
     // ##########################################################################################
@@ -71,5 +71,38 @@ public class VideoLengthHelper {
     private static double grabNewMulti() {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextDouble();
+    }
+
+    // Method for processing the video based on compression multi
+    public static String processVideo(double multi) {
+        // Variable collecting
+        System.out.println("Start [Minute] input:");
+        int startMinute = getUserInput();
+        System.out.println("Start [Seconds] input:");
+        int startSecond = getUserInput();
+        System.out.println("End [Minute] input:");
+        int endMinute = getUserInput();
+        System.out.println("End [Seconds] input:");
+        int endSecond = getUserInput();
+
+        // Digest the input info
+        int startTotal = (startMinute * 60) + startSecond;
+        int endTotal = (endMinute * 60) + endSecond;
+        int grandTotal = (int) (((endTotal - startTotal) / multi) + startTotal);
+
+        int resultMinutes = 0;
+        int resultSeconds = 0;
+        while (grandTotal > 60) {
+            grandTotal -= 60;
+            resultMinutes++;
+        }
+        resultSeconds += grandTotal;
+
+        // Output the results
+        if (resultSeconds < 10) {
+            return "[COMPLETE] Update video end to [" + resultMinutes + ":0" + resultSeconds + "]";
+        } else {
+            return "[COMPLETE] Update video end to [" + resultMinutes + ":" + resultSeconds + "]";
+        }
     }
 }

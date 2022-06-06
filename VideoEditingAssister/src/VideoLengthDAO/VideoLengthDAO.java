@@ -33,7 +33,8 @@ public class VideoLengthDAO {
                     break;
                 case 2:
                     // Process video
-                    this.statusMsg = "[ERROR] This hasn't be implemented yet";
+                    String msg = VideoLengthHelper.processVideo(multi);
+                    this.statusMsg = msg;
                     break;
                 case 3:
                     // Update multi variable
