@@ -8,11 +8,8 @@ Some examples are:
 - Helps the user figure out how far back to compress the video to make it 2x,3x, etc - whatever the user wants.
 
 ***********************************
-* Project Structure Documentation *
+* Helper Documentation *
 ***********************************
-Main{
-    Description: This is the main running class to operate the program
-};
 
 ------------------------
 - Song Choosing Helper -
@@ -22,15 +19,19 @@ Main{
   ensures it hasn't been selected recently
 - This uses the saveFile.txt file to serialize the songList so that it can be saved for use later
 
-SongList {
-    Description: This class's purpose is to provide the SongDAO with a way to build a songList
+------------------------
+- Video Length Helper  -
+------------------------
+- This Helper is useful for allowing the user to quickly know how far to compress a video clip.
+- Example case below:
 
-    String[] songList;
-    int[] pingList;
+- Video Clip that goes from 0:00 -> 3:00. 1x speed.
 
-};
+1. Desire is to make the video 3x faster
+2. Input 3 as the compression multiplier in the program
+3. Enter the video clip properties into the program
+4. See Request Status line
+5. Compress your video to the new suggested end.
+    - In this example, the program will output 1:00
 
-SongListDAO {
-    Description: This class contains all the methods for the songList, it also recommends a song to the user and,
-                 it will modify the saveFile.txt when it grabs a random song
-};
+- Video Clip new settings is 0:00 -> 1:00. 3x speed (Or very close!)

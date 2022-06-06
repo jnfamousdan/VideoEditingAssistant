@@ -92,7 +92,7 @@ public class VideoLengthHelper {
 
         int resultMinutes = 0;
         int resultSeconds = 0;
-        while (grandTotal > 60) {
+        while (grandTotal >= 60) {
             grandTotal -= 60;
             resultMinutes++;
         }
