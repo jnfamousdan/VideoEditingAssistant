@@ -8,8 +8,9 @@ public class MainHelper {
     // Message for the main hub to choose a Helper
     public static void message_PickDAO(String statusMsg) {
         System.out.println(
-                "\n-------------------------------------------------------------" +
+                "\n---------------------------------------------------------------------" +
                         "\n- Welcome to the Main Hub!                                  -" +
+                        "\n- [ReadMe.txt for Helper Descriptions]                      -" +
                         "\n-------------------------------------------------------------" +
                         "\nPlease pick the Helper you need to in your video assistance.\n\n" +
                         "1 : [Exit]\n" +
